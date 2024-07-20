@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+</head>
+<body>
+    <h1>Text Summarizer</h1>
+    <form action="{{ url_for('analyze') }}" method="POST">
+        <textarea name="rawtext" rows="10" cols="50" placeholder="Enter text to summarize..."></textarea>
+        <br>
+        <label for="language">Select Language:</label>
+        <select name="language" id="language">
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="kannada">Kannada</option>
+            <option value="malayalam">Malayalam</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+            <option value="chinese">Chinese</option>
+            <option value="korean">Korean</option>
+        </select>
+        <br>
+        <button type="submit">Summarize</button>
+    </form>
+    <hr>
+    <h2>Upload a file</h2>
+    <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <br>
+        <button type="submit">Upload and Summarize</button>
+    </form>
+</body>
+</html>
